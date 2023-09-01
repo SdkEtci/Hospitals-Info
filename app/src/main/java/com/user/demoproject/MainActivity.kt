@@ -4,6 +4,8 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,5 +42,12 @@ class MainActivity : AppCompatActivity() {
         hospitalImages.add(meramBitmap)
         hospitalImages.add(numuneBitmap)
         hospitalImages.add(sehirBitmap)
+
+        //Adapter
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+
+        val adapter =RecyclerAdapter(hospitalNames, hospitalImages)
+        recyclerView.adapter= adapter
     }
 }
