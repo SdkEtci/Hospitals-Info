@@ -14,14 +14,25 @@ class MainActivity : AppCompatActivity() {
 
         // Data
         var hospitalNames = ArrayList<String>()
-        hospitalNames.add("Beysehir Hastanesi ")
-        hospitalNames.add("Cumra")
-        hospitalNames.add("Dr_Ali_Kemal_Kadin_Dogum")
-        hospitalNames.add("Eregli")
-        hospitalNames.add("Kulu")
-        hospitalNames.add("Meram")
-        hospitalNames.add("Numune")
-        hospitalNames.add("Sehir_hastanesi")
+        hospitalNames.add("Beyşehir Devlet Hastanesi")
+        hospitalNames.add("Çumra Devlet Hastanesi")
+        hospitalNames.add("Dr. Ali Kemal Belviranlı Hastanesi")
+        hospitalNames.add("Ereğli Devlet Hastanesi")
+        hospitalNames.add("Kulu Devlet Hastanesi")
+        hospitalNames.add("Meram Devlet Hastanesi")
+        hospitalNames.add("Konya Numune Hastanesi")
+        hospitalNames.add("Konya Şehir Hastanesi")
+
+        // Addresses
+        var hospitalAddresses = ArrayList<String>()
+        hospitalAddresses.add("\nBeyşehir İlçe Devlet Hastanesi Esentepe Mahallesi 40525.Sokak No:1 Beyşehir / Konya")
+        hospitalAddresses.add("\nMeydan Mahallesi Hastane Cad. NO:6 ULAŞIM:Çumra Genelinden Kalkan Hastane Dolmuşları İle Hastanemize Ulaşım Sağlayabilirsiniz")
+        hospitalAddresses.add("\nFatih Mahallesi, Yeni İstanbul Cd. No:30, 42285 (Şehitler Cami Tramvay Durağı Karşısı) Selçuklu/Konya")
+        hospitalAddresses.add("\nToros Mah. Şehit Metin Düzgün Cad. No:1/A Ereğli/KONYA")
+        hospitalAddresses.add("\nYeni Mahalle Ahmet Baran Caddesi Kozanlı Yolu Kulu / Konya")
+        hospitalAddresses.add("\nAyanbey Mah.Yeni Meram Cad.No:97 Meram/Konya")
+        hospitalAddresses.add("\nFerhuniye Mah. Hastane Cd. No:22, 42060 Selçuklu / KONYA")
+        hospitalAddresses.add("\nAkabe Mah. Adana Çevre Yolu Cad. No:135 42020 Karatay / KONYA")
 
         //Bitmaps
         val beysehirBitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.beysehir)
@@ -47,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        val adapter =RecyclerAdapter(hospitalNames, hospitalImages)
+        val adapter =RecyclerAdapter(hospitalNames, hospitalAddresses, hospitalImages)
         recyclerView.adapter= adapter
     }
 }

@@ -12,7 +12,9 @@ class SecondActivity : AppCompatActivity() {
 
         val intent= intent
         val selectedHospitalName= intent.getStringExtra("hospitalName")
+        val selectedHospitalAddress= intent.getStringExtra("hospitalAddress")
         textView.text= selectedHospitalName
+        textView2.text= selectedHospitalAddress
 
         val selectedHospital= SingletonClass.selectedHospital
         val selectedImage = selectedHospital.image

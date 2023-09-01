@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
-class RecyclerAdapter( val hospitalList: ArrayList<String>, val hospitalImages : ArrayList<Bitmap>) : RecyclerView.Adapter<RecyclerAdapter.HospitalVH>() {
+class RecyclerAdapter( val hospitalList: ArrayList<String>, val hospitalAddresses: ArrayList<String>, val hospitalImages : ArrayList<Bitmap>) : RecyclerView.Adapter<RecyclerAdapter.HospitalVH>() {
     class HospitalVH(itemView : View) : RecyclerView.ViewHolder(itemView){
 
     }
@@ -23,6 +23,7 @@ class RecyclerAdapter( val hospitalList: ArrayList<String>, val hospitalImages :
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, SecondActivity:: class.java)
             intent.putExtra("hospitalName", hospitalList.get(position))
+            intent.putExtra("hospitalAddress", hospitalAddresses.get(position))
             val singleton= SingletonClass.selectedHospital
             singleton.image = hospitalImages.get(position)
             holder.itemView.context.startActivity(intent)
