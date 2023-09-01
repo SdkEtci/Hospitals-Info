@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         // Data
         var hospitalNames = ArrayList<String>()
-        hospitalNames.add("Beysehir")
+        hospitalNames.add("Beysehir Hastanesi ")
         hospitalNames.add("Cumra")
         hospitalNames.add("Dr_Ali_Kemal_Kadin_Dogum")
         hospitalNames.add("Eregli")

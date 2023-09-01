@@ -1,5 +1,6 @@
 package com.user.demoproject
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,13 @@ class RecyclerAdapter( val hospitalList: ArrayList<String>, val hospitalImages :
 
     override fun onBindViewHolder(holder: HospitalVH, position: Int) {
         holder.itemView.recyclerViewTextView.text = hospitalList.get(position)
-
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, SecondActivity:: class.java)
+            intent.putExtra("hospitalName", hospitalList.get(position))
+            val singleton= SingletonClass.selectedHospital
+            singleton.image = hospitalImages.get(position)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
